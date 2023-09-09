@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --header-footer-color: rgba(34, 34, 34, 1);
+  --body-color: rgba(27, 30, 33, 1);
+  --calm-white: #cccccc;
+}
+nav {
+  background-color: var(--header-footer-color) !important;
+  /* color: var(--calm-white) !important; */
+}
+
+.logo img {
+  width: 35px;
+}
+footer {
+  background-color: var(--header-footer-color) !important;
+  padding: 20px 0;
+  text-align: center;
+}
