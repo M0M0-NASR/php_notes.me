@@ -1,0 +1,22 @@
+{
+    "name": "moham/my_mvc",
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "Controller\\": "controllers/",
+            "Config\\": "config/"
+
+        },
+    "files": [
+            "config/config.php",
+            "config/loadENV.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "mohamed693",
+            "email": "mohamed.nasr20977@gmail.com"
+        }
+    ],
+    "require": {}
+}
