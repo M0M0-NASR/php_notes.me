@@ -11,7 +11,6 @@ class View
         // echo VIEWS;
         $file = VIEWS . $viewName . ".php";
         if (file_exists($file)) {
-
             extract($data);
             ob_start();
             require($file);

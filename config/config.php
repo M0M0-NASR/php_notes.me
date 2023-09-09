@@ -1,5 +1,6 @@
 <?php
 
+define("DOMAINNAME", "http://php_notes.me/");
 define("DS", DIRECTORY_SEPARATOR);
 define("ROOT_PATH", dirname(__DIR__) . DS);
 define("CORE", ROOT_PATH . "core" . DS);

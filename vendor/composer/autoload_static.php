@@ -9,9 +9,14 @@ class ComposerStaticInit712cea7267433d14330eb1605945b8e8
     public static $files = array (
         'b4fcb6c2a021aff80546205339b9f775' => __DIR__ . '/../..' . '/config/config.php',
         '9ee68564ac65797f5eb13a7eb9534b01' => __DIR__ . '/../..' . '/config/loadENV.php',
+        '3d06332a9261ac84b945731e66031064' => __DIR__ . '/../..' . '/config/helper.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'M' => 
+        array (
+            'Model\\' => 6,
+        ),
         'C' => 
         array (
             'Core\\' => 5,
@@ -21,6 +26,10 @@ class ComposerStaticInit712cea7267433d14330eb1605945b8e8
     );
 
     public static $prefixDirsPsr4 = array (
+        'Model\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/models',
+        ),
         'Core\\' => 
         array (
             0 => __DIR__ . '/../..' . '/core',

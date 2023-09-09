@@ -8,4 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     'b4fcb6c2a021aff80546205339b9f775' => $baseDir . '/config/config.php',
     '9ee68564ac65797f5eb13a7eb9534b01' => $baseDir . '/config/loadENV.php',
+    '3d06332a9261ac84b945731e66031064' => $baseDir . '/config/helper.php',
 );

@@ -4,12 +4,14 @@
         "psr-4": {
             "Core\\": "core/",
             "Controller\\": "controllers/",
-            "Config\\": "config/"
+            "Config\\": "config/",
+            "Model\\": "models/"
 
         },
     "files": [
             "config/config.php",
-            "config/loadENV.php"
+            "config/loadENV.php",
+            "config/helper.php"
         ]
     },
     "authors": [

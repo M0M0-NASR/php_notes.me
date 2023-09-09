@@ -6,12 +6,13 @@ use PDO;
 
 class Model
 {
+    private PDO $db;
 
-    static function connect()
+    function __construct()
     {
         $dsn = "mysql:host=" . $_ENV['DB_HOST'] . ";dbname=" . $_ENV['DB_NAME'];
         try {
-            $db = new PDO(
+            $this->db = new PDO(
                 $dsn,
                 $_ENV['USERNAME'],
                 $_ENV['PASS'],
@@ -22,6 +23,17 @@ class Model
         } catch (\PDOException $e) {
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
-        return $db;
+    }
+
+
+    protected function connect()
+    {
+        // var_dump($this->db);
+        if (isset($this->db)) {
+            echo "Connection Established<br>";
+            return $this->db;
+        } else {
+            echo "Error In DB Connection";
+        }
     }
 }
