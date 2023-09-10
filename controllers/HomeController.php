@@ -11,7 +11,7 @@ class HomeController
 {
     function index()
     {
-        View::load("inc/header");
+        View::load("home");
         // echo url();
     }
 }
