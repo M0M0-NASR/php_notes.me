@@ -8,6 +8,6 @@ class HomeController
 {
     function index()
     {
-        View::load("home");
+        View::load("user/lesson");
     }
 }
