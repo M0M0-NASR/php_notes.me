@@ -3,10 +3,6 @@
 
 namespace Core;
 
-use Composer\Autoload\ClassLoader;
-use Controller\HomeController;
-// use Controller\HomeController;
-
 class App extends \Composer\Autoload\ClassLoader
 {
     private string $controller = "Controller\\";

@@ -1,6 +1,5 @@
-<?php
+<?php Core\View::load("inc/header"); ?>
+<?php Core\View::load("user/intro"); ?>
+<?php Core\View::load("inc/chapters"); ?>
 
-use Core\View;
-
-View::load("inc/header");
-View::load("inc/footer");
+<?php Core\View::load("inc/footer"); ?>

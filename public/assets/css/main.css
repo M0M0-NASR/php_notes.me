@@ -9,6 +9,15 @@
   --body-color: rgba(27, 30, 33, 1);
   --calm-white: #cccccc;
 }
+
+body {
+  background-color: var(--body-color) !important;
+}
+
+.underline-none {
+  text-decoration: unset !important;
+}
+
 nav {
   background-color: var(--header-footer-color) !important;
   /* color: var(--calm-white) !important; */
