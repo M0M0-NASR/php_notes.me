@@ -10,7 +10,7 @@
     </footer>
     <!-- end Footer -->
 
-    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php url("assets/js/bootstrap.bundle.min.js") ?>"></script>
 
     </body>
 

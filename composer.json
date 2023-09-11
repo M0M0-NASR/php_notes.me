@@ -20,5 +20,7 @@
             "email": "mohamed.nasr20977@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "phpoffice/phpword": "^1.1"
+    }
 }

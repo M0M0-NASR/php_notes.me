@@ -13,9 +13,17 @@ class ComposerStaticInit712cea7267433d14330eb1605945b8e8
     );
 
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'PhpOffice\\PhpWord\\' => 18,
+        ),
         'M' => 
         array (
             'Model\\' => 6,
+        ),
+        'L' => 
+        array (
+            'Laminas\\Escaper\\' => 16,
         ),
         'C' => 
         array (
@@ -26,9 +34,17 @@ class ComposerStaticInit712cea7267433d14330eb1605945b8e8
     );
 
     public static $prefixDirsPsr4 = array (
+        'PhpOffice\\PhpWord\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpoffice/phpword/src/PhpWord',
+        ),
         'Model\\' => 
         array (
             0 => __DIR__ . '/../..' . '/models',
+        ),
+        'Laminas\\Escaper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-escaper/src',
         ),
         'Core\\' => 
         array (

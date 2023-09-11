@@ -6,7 +6,9 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'PhpOffice\\PhpWord\\' => array($vendorDir . '/phpoffice/phpword/src/PhpWord'),
     'Model\\' => array($baseDir . '/models'),
+    'Laminas\\Escaper\\' => array($vendorDir . '/laminas/laminas-escaper/src'),
     'Core\\' => array($baseDir . '/core'),
     'Controller\\' => array($baseDir . '/controllers'),
     'Config\\' => array($baseDir . '/config'),

@@ -20,6 +20,7 @@ body {
 
 nav {
   background-color: var(--header-footer-color) !important;
+  /* color: var(--calm-white) !important; */
 }
 
 .logo img {
@@ -32,4 +33,13 @@ footer {
 }
 .directoy {
   background-color: var(--header-footer-color) !important;
+}
+
+.redirect input {
+  width: 160px;
+}
+
+.inp-body-bg {
+  background-color: var(--header-footer-color) !important;
+  color: white !important;
 }
