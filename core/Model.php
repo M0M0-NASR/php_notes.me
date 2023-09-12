@@ -30,7 +30,6 @@ class Model
     {
         // var_dump($this->db);
         if (isset($this->db)) {
-            echo "Connection Established<br>";
             return $this->db;
         } else {
             echo "Error In DB Connection";

@@ -13,41 +13,49 @@
 </section>
 <!-- end of how to add section  -->
 
+<!-- start handle error -->
+<?php if ($code == 200) : ?>
+    <div class="container alert alert-primary" role="alert">
+        <?php echo $msg ?>
+    </div>
+<?php else : ?>
+    <div class="container alert alert-danger" role="alert">
+        <?php echo $msg ?>
+    </div>
+<?php endif ?>
+<!-- edn handle error -->
+
+
 <!-- start add form -->
 <section class="holder container text-white">
     <ul class="nav nav-tabs d-flex flex-row justify-content-center" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
-                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Write Lesson</button>
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Write Lesson</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
-                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Upload File</button>
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Upload File</button>
         </li>
 
     </ul>
     <div class="tab-content  d-flex flex-row justify-content-center" id="myTabContent">
-        <div class="tab-pane fade show active w-75 mt-3" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
-            tabindex="0">
-            <form class="d-flex flex-column align-items-center" action="addleson" method="post">
+        <div class="tab-pane fade show active w-75 mt-3" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+            <form class="d-flex flex-column align-items-center" action="<?php url("admin/storeLesson") ?>" method="POST">
                 <div class="mb-3 w-100">
                     <label for="lesson-name" class="form-label">Lesson's Name</label>
-                    <input type="text" class="form-control inp-body-bg" id="lesson-name" placeholder="Lesson Name">
+                    <input name="title" type="text" class="form-control inp-body-bg" id="lesson-name" placeholder="Lesson Name">
                 </div>
                 <div class="mb-3 w-100">
                     <label for="lesson-content" class="form-label">Content</label>
-                    <textarea class="form-control inp-body-bg" id="lesson-content" rows="20"></textarea>
+                    <textarea name="content" class="form-control inp-body-bg" id="lesson-content" rows="20"></textarea>
                 </div>
                 <div class="mb-3 text-center w-50">
-                    <input type="submit" name="submit" value="Subimt" class="form-control inp-body-bg w-100"
-                        id="lesson-name">
+                    <input type="submit" name="submit" value="Subimt" class="form-control inp-body-bg w-100" id="lesson-name">
                 </div>
             </form>
 
         </div>
-        <div class="tab-pane fade w-75 mt-3" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
-            tabindex="0">
-            <form class="d-flex flex-column align-items-center" action="addleson" method="post">
+        <div class="tab-pane fade w-75 mt-3" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            <form class="d-flex flex-column align-items-center" action="<?php url("admin/storeLesson") ?>" method="post">
                 <div class="mb-3 w-100">
                     <label for="lesson-name" class="form-label">Lesson's Name</label>
                     <input type="text" class="form-control inp-body-bg" id="lesson-name" placeholder="Lesson Name">
@@ -59,8 +67,7 @@
                     </div>
                 </div>
                 <div class="mb-3 text-center w-50">
-                    <input type="submit" name="submit" value="Subimt" class="form-control inp-body-bg w-100"
-                        id="lesson-name">
+                    <input type="submit" name="submit" value="Subimt" class="form-control inp-body-bg w-100" id="lesson-name">
                 </div>
             </form>
 

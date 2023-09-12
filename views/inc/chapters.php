@@ -2,17 +2,13 @@
 <section class="chapters container mt-3 mb-3">
     <h1 class="text-white">Outline :</h1>
     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+
+        <?php foreach ($lessons as $value) : ?>
         <li class="nav-item mt-2">
-            <a class="underline-none" href="#">Home</a>
+            <a href=<?php url("admin/getlesson/" . $value['id']); ?> class="underline-none" href="#">
+                <?php echo $value["title"] ?> </a>
+
         </li>
-        <li class="nav-item mt-2">
-            <a class="underline-none" href="#">About</a>
-        </li>
-        <li class="nav-item mt-2">
-            <a class="underline-none" href="#">Contact Me</a>
-        </li>
-        <li class="nav-item mt-2">
-            <a class="underline-none" href="#">Contribute</a>
-        </li>
+        <?php endforeach; ?>
 </section>
 <!-- end chapters section  -->
