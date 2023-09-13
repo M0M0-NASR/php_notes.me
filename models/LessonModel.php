@@ -34,13 +34,11 @@ class LessonModel extends Model
     {
         $id = htmlspecialchars((string) $id);
         $id = filter_var($id, FILTER_SANITIZE_SPECIAL_CHARS);
-
         try {
             $query = "SELECT * FROM lessons WHERE id =?";
             $stmt = $this->db->prepare($query);
             $stmt->execute([$id]);
             return $stmt->fetch();
-
         } catch (\Exception $e) {
             //throw $th;
             throw new Exception("DataBase Error", 500);
@@ -61,12 +59,12 @@ class LessonModel extends Model
         }
     }
 
-    function updateLesson()
+    function updateLesson($id)
     {
     }
 
 
-    function deleteLesson()
+    function deleteLesson($id)
     {
     }
 }

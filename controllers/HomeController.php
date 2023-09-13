@@ -10,9 +10,20 @@ class HomeController
 {
     function index()
     {
-        $lesson = new LessonModel;
-        $allLessons = $lesson->getAllLessons();
-        View::load("home", ["lessons" => $allLessons]);
+        try {
+            //code...
+            $lesson = new LessonModel;
+            $allLessons = $lesson->getAllLessons();
+            $status_code = 200;
+            View::load("home", ["lessons" => $allLessons]);
+        } catch (\Exception $th) {
+            //throw $th;
+            $status_code = $th->getCode();
+            $msg = $th->getMessage();
+            View::load("inc/error", ["msg" => $msg]);
+        } finally {
+            http_response_code($status_code);
+        }
     }
 
     function contact()

@@ -21,7 +21,7 @@ class Model
                 ]
             );
         } catch (\PDOException $e) {
-            throw new \PDOException($e->getMessage(), (int)$e->getCode());
+            throw new \PDOException("DataBase Error Connection field", 500);
         }
     }
 
