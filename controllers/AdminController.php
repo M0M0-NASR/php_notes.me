@@ -17,7 +17,28 @@ class AdminController
         $lesson = new LessonModel;
         $allLessons = $lesson->getAllLessons();
         $_SESSION['lessons'] = $allLessons;
-        View::load("admin/adminPage", ["lessons" => $allLessons , "is_admin" => 0]);
+        View::load("admin/adminPage", ["lessons" => $allLessons, "is_admin" => 0]);
+    }
+
+    function getLesson($id)
+    {
+        try {
+            $lessonModel = new LessonModel;
+            [$row, $next, $prev] = $lessonModel->getOneLesson($id);
+            if (!$row)
+                throw new Exception("DATABASE ERORR:ROW NOT FOUND", 400);
+            $row['content'] = htmlspecialchars_decode($row['content']);
+            $status_code = 200;
+            $msg = "";
+            View::load("inc/lesson", ['id' => $id, 'row' => $row, 'next' => $next, 'prev' => $prev]);
+        } catch (\Exception $th) {
+            //throw $th;
+            $status_code = $th->getCode();
+            $msg = $th->getMessage();
+            View::load("inc/404", ["msg" => $msg, 'status_code' => $status_code]);
+        } finally {
+            http_response_code($status_code);
+        }
     }
 
     function addLesson()
