@@ -1,5 +1,5 @@
 <?php Core\View::load("inc/header"); ?>
-
+<?php Core\View::load("admin/navbar"); ?>
 
 <!-- start of how to add section  -->
 <section class="the-way container text-white mt-3 mb-3">
@@ -14,15 +14,13 @@
 <!-- end of how to add section  -->
 
 <!-- start handle error -->
-<?php if ($code == 200) : ?>
+
+<?php if (isset($msg)) : ?>
     <div class="container alert alert-primary" role="alert">
         <?php echo $msg ?>
     </div>
-<?php else : ?>
-    <div class="container alert alert-danger" role="alert">
-        <?php echo $msg ?>
-    </div>
-<?php endif ?>
+<?php endif; ?>
+
 <!-- edn handle error -->
 
 

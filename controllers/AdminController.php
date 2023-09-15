@@ -4,6 +4,7 @@ namespace Controller;
 
 use Core\Validation;
 use Core\View;
+use Exception;
 use Model\LessonModel;
 
 class AdminController
@@ -19,35 +20,15 @@ class AdminController
         View::load("admin/adminPage", ["lessons" => $allLessons]);
     }
 
-
-    private function prepareLesson($id): array
-    {
-        session_start();
-        $i = 0;
-        $next = $prev = null;
-        $lessons = $_SESSION['lessons'];
-        $size = count($lessons);
-        foreach ($lessons as $row) {
-            if ($id == $row['id']) {
-                if ($id == $lessons[0]['id'])
-                    $next = $lessons[$i + 1]['id'];
-                else if ($id == $lessons[$size - 1]['id'])
-                    $prev = $lessons[$i - 1]['id'];
-                else {
-                    $next = $lessons[$i + 1]['id'];;
-                    $prev = $lessons[$i - 1]['id'];;
-                }
-            }
-            $i++;
-        }
-        unset($lessons);
-        return [$next, $prev];
-    }
-
-
     function addLesson()
     {
-        View::load("admin/addLesson");
+
+        try {
+            //code...
+            View::load("admin/addLesson");
+        } catch (\Exception $th) {
+            View::load("inc/error", ["msg" => $th->getMessage()]);
+        }
     }
 
     function storeLesson()

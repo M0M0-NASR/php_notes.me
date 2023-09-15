@@ -4,7 +4,7 @@
 
     <p class="fw-bold fs-1 text-center">404 User Error</p>
 
-    <p><?php echo $msg  ?></p>
+    <p><?php echo $msg; ?></p>
 
 </div>
 
