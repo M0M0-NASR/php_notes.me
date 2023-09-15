@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg text-light">
         <div class="container align-middle">
             <div class="logo d-flex me-3">
-                <img src="../../imgs/learn-php.org.ico" alt="logo">
+                <img src="<?php url("assets/imgs/learn-php.org.ico"); ?>" alt="logo">
                 <a class="nav-link ms-2 fw-bold fs-5" href="#">Learn-PHP.org</a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

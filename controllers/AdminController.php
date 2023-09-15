@@ -11,14 +11,37 @@ class AdminController
     // will get all lesson 
     function index(): void
     {
+        session_start();
+
         $lesson = new LessonModel;
         $allLessons = $lesson->getAllLessons();
+        $_SESSION['lessons'] = $allLessons;
         View::load("admin/adminPage", ["lessons" => $allLessons]);
     }
 
-    function getLesson($id)
+
+    private function prepareLesson($id): array
     {
-        View::load("inc/lesson", [$id]);
+        session_start();
+        $i = 0;
+        $next = $prev = null;
+        $lessons = $_SESSION['lessons'];
+        $size = count($lessons);
+        foreach ($lessons as $row) {
+            if ($id == $row['id']) {
+                if ($id == $lessons[0]['id'])
+                    $next = $lessons[$i + 1]['id'];
+                else if ($id == $lessons[$size - 1]['id'])
+                    $prev = $lessons[$i - 1]['id'];
+                else {
+                    $next = $lessons[$i + 1]['id'];;
+                    $prev = $lessons[$i - 1]['id'];;
+                }
+            }
+            $i++;
+        }
+        unset($lessons);
+        return [$next, $prev];
     }
 
 
@@ -29,7 +52,6 @@ class AdminController
 
     function storeLesson()
     {
-
         $title = $_POST['title'];
         $content = $_POST['content'];
 

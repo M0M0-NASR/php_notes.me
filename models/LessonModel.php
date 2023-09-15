@@ -38,12 +38,37 @@ class LessonModel extends Model
             $query = "SELECT * FROM lessons WHERE id =?";
             $stmt = $this->db->prepare($query);
             $stmt->execute([$id]);
-            return $stmt->fetch();
+            $row = $stmt->fetch();
+            [$next, $prev] = $this->prepareLesson($id);
+            return [$row, $next, $prev];
         } catch (\Exception $e) {
-            //throw $th;
-            throw new Exception("DataBase Error", 500);
+            throw new Exception("DataBase Error: Row Not Found ", 500);
         }
     }
+    private function prepareLesson($id): array
+    {
+        session_start();
+        $i = 0;
+        $next = $prev = null;
+        $lessons = $_SESSION['lessons'];
+        $size = count($lessons);
+        foreach ($lessons as $row) {
+            if ($id == $row['id']) {
+                if ($id == $lessons[0]['id'])
+                    $next = $lessons[$i + 1]['id'];
+                else if ($id == $lessons[$size - 1]['id'])
+                    $prev = $lessons[$i - 1]['id'];
+                else {
+                    $next = $lessons[$i + 1]['id'];;
+                    $prev = $lessons[$i - 1]['id'];;
+                }
+            }
+            $i++;
+        }
+        unset($lessons);
+        return [$next, $prev];
+    }
+
 
     function addLesson(string $title, string $content)
     {
@@ -58,6 +83,7 @@ class LessonModel extends Model
             throw new \Exception("Database Error", 500);
         }
     }
+
 
     function updateLesson($id)
     {

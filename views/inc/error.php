@@ -4,7 +4,8 @@
 
     <p class="fw-bold fs-1 text-center">500 server Error</p>
 
-    <p><?php echo $msg ?></p>
+    <p><?php echo $msg; ?></p>
 
 </div>
+
 <?php Core\View::load("inc/footer"); ?>
