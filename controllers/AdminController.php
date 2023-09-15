@@ -17,7 +17,7 @@ class AdminController
         $lesson = new LessonModel;
         $allLessons = $lesson->getAllLessons();
         $_SESSION['lessons'] = $allLessons;
-        View::load("admin/adminPage", ["lessons" => $allLessons]);
+        View::load("admin/adminPage", ["lessons" => $allLessons , "is_admin" => 0]);
     }
 
     function addLesson()
