@@ -20,14 +20,15 @@ each topic explained in the chapter that has all notes about this topic.
 
 ## Installation and Requirements
 
-1- XAMPP, Composer
-2- create Virtual has name below. check this to know more about Virthal Host[Create Virtual host](https://programmingfields.com/how-to-create-a-virtual-host-in-xampp-for-php-in-windows/)
+1- Install [ XAMPP, Composer ] .
+
+2- create Virtual has name below. check this to know more about Virthal Host [Create Virtual host ](https://programmingfields.com/how-to-create-a-virtual-host-in-xampp-for-php-in-windows/)
 
 ```bash
 php_notes.me 127.0.0.1
 ```
-4- install Modules for project
+3- install Modules for project
 ```bash
 php composer.phar update
 ```
-5- Enjoy !!.
+4- Enjoy !!.
